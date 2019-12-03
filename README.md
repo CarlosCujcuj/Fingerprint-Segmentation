@@ -42,3 +42,58 @@ Later we add a padding of 1px to our image, this is because we need to apply a k
 <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/download.png" height="150" />
 </p>
  
+ 3. Connected Component Labelling
+ 
+ One common problem encountered in image analysis is to figure out which parts of an object are "connected", physically. That is, irrespective of the colour. Here's an example:
+ 
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/labelling-example.jpg" height="250" /> 
+</p>
+
+In the above image, the red and green circles are distinct. But the goal is not to detect circles (you can do that using the Circle Hough Transform). The goal is to identify the two "blobs". Each blob consisting of two circles, one red and one green.
+
+So, the desired output is something like this:
+ 
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/labelling-labelled.jpg" height="250" /> 
+</p>
+
+With this type of output, you can easily figure out how many components the image has, and which pixels are connected. The blue pixels are all connected and form one component. Similarly, the green one. 
+
+This will help us to detect every segment *(represented by a color)* of the fingerprint image.
+
+Reference : [connected-component-labelling](http://aishack.in/tutorials/connected-component-labelling/)
+
+Here's another example how should work:
+
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/label-example-binary.jpg" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/label-binary-final.jpg" height="200" />
+</p>
+
+For a more deep explanation you can read this article which helped me to understand very well how the algorithm works:  
+* [Connected Component Labelling by Utkarsh Sinha](http://aishack.in/tutorials/labelling-connected-components-example)
+
+---  
+
+With all these concepts and algorithms together we completed our project, which helps us to detect the different segments of our fingerprint image.   
+However, we can apply this script to more images, and the results are quite pretty by changing the color pallete:
+
+a. 
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilsotsu.jpg" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilOtsuOutput.png" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilOtsuOutput2.png" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilOtsuOutput3.png" height="200" />
+</p>
+
+b. 
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilsphan.jpg" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilSphanOutput.png" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilSphanOutput2.png" height="200" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/pupilSphanOutput3.png" height="200" />
+</p>
+
+c.  
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/thresholdinggood.jpg" height="350" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/thresholdinggoodOutput.png" height="350" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/thresholdinggoodOutput2.png" height="350" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/thresholdinggoodOutput3.png" height="350" />
+</p>
+
+d.  
+<p align="center">
+<img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/airplane.png" height="370" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/airplaneOutput.png" height="370" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/airplaneOutput2.png" height="370" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/airplaneOutput3.png" height="370" />
+</p>
