@@ -15,14 +15,14 @@ And also other very important techniques like:
 <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/inputImage.png" height="300" /> <img src="https://github.com/CarlosCujcuj/Fingerprint-Segmentation/blob/master/imgs/fprint3_ccl.png" height="300" />
 </p>
 
----  
+
 ## How to run it?  
 ``` 
 $ python fSegmentation.py inputImage.png outputImageName.png
 ```  
 Where **inputImage** and **outputImageName** can be any image format  
 
----
+
 ## Brief Step by Step How it Works
 
 1. Binarization  
