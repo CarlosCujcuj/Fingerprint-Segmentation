@@ -106,7 +106,20 @@ def labelview(labels):
 
     """
 
+    #Colores en RGB
+    #pallete 1
     colores = [[69, 245, 10], [224, 27, 109], [17, 237, 200], [17, 21, 237], [89, 13, 219], [227, 242, 12]]
+
+    #pallete 2
+    #colores = [[4, 218, 173], [0, 188, 174], [0, 158, 165], [0, 128, 146], [35, 99, 120], [47, 72, 88]]
+
+    #pallete 3
+    #colores = [[209, 25, 69], [181, 40, 111], [136, 63, 134], [87, 75, 134], [51, 77, 116], [47, 72, 88]]
+
+    #pallete 4
+    #colores = [[228, 242, 10], [115, 220, 88], [0, 187, 130], [0, 149, 145], [0, 110, 129], [47, 72, 88], [72, 55, 102]]
+
+
                                  #fila,       columna,    colores
     labelColors = np.full((labels.shape[0], labels.shape[1], 3), 0, dtype = int)
     auxColors = [[0,0,0]]
@@ -134,4 +147,9 @@ def labelview(labels):
     return labelColors
 
 
-plot.imgview(labelview(connected_c(imagenInput)), filename=outputImg)
+#plot.imgview(labelview(connected_c(imagenInput)), filename=outputImg)
+result = labelview(connected_c(imagenInput))
+#convert to float32 so we can convert BRG colors to RGB
+result = result.astype(np.float32)
+result = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
+cv2.imwrite('{}'.format(outputImg),   result )
