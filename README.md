@@ -1,6 +1,6 @@
-# Fingerprint Segmentation
+# Image Segmentation
 
-The purpose of this project is to segment the image of a fingerprint using certain techniques of Computer Vision like:
+The purpose of this project is to segment different images using certain techniques of Computer Vision like:
 * Blur
 * Kernels
 * Image Binarization
